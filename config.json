@@ -13,10 +13,10 @@
   "comments": {
     "enabled": true,
     "provider": "giscus",
-    "repo": "icgw/website",
-    "repo_id": "R_kgDOUBkB6w",
+    "repo": "icgw/icgw.github.io",
+    "repo_id": "MDEwOlJlcG9zaXRvcnkxMTU1ODYyOTc=",
     "category": "Announcements",
-    "category_id": "DIC_kwDOUBkB684DEBCf",
+    "category_id": "DIC_kwDOBuO0-c4DLO9_",
     "mapping": "pathname",
     "lang": "zh-CN"
   },
