@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PAGE_TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="icon" href="{{BASE}}/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{BASE}}/assets/css/style.css">
+<link rel="stylesheet" href="{{BASE}}/assets/css/highlight.css">
+{{BACKGROUND_STYLE}}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{BASE}}/rss.xml">
+<meta property="og:site_name" content="{{SITE_TITLE}}">
+<meta property="og:title" content="{{PAGE_TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:type" content="{{OG_TYPE}}">
+<meta property="og:url" content="{{PAGE_URL}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="{{PAGE_URL}}">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="site-title" href="{{BASE}}/">
+      <img class="site-logo" src="{{BASE}}/assets/images/avatar.svg" alt="" width="28" height="28">
+      <span>{{SITE_TITLE}}</span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="{{BASE}}/" {{NAV_HOME}}>首页</a>
+      <a href="{{BASE}}/archive/" {{NAV_ARCHIVE}}>归档</a>
+      <a href="{{BASE}}/tags/" {{NAV_TAGS}}>标签</a>
+      <a href="{{BASE}}/categories/" {{NAV_CATEGORIES}}>分类</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" {{NAV_RECORD}} aria-haspopup="true" aria-expanded="false">记录 <span class="caret">▾</span></button>
+        <div class="nav-dropdown-menu">
+          <a href="{{BASE}}/todo/">要做的清单</a>
+          <a href="{{BASE}}/calendar/">日历</a>
+        </div>
+      </div>
+      <a href="{{BASE}}/about/" {{NAV_ABOUT}}>关于</a>
+    </nav>
+    <form class="site-search" action="{{BASE}}/search/" method="get" role="search">
+      <input type="search" name="q" placeholder="搜索文章…" aria-label="搜索文章">
+    </form>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换深浅色">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+<main class="wrap main">
+{{PAGE_CONTENT}}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© {{YEAR}} {{AUTHOR}} · <a href="{{BASE}}/rss.xml">RSS 订阅</a> {{BUSUANZI_SITE}}</p>
+  </div>
+</footer>
+<button type="button" class="back-to-top" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span>顶部</span>
+</button>
+<button type="button" class="back-to-bottom" aria-label="返回底部">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span>底部</span>
+</button>
+<script>
+(function () {
+  var topBtn = document.querySelector(".back-to-top");
+  var bottomBtn = document.querySelector(".back-to-bottom");
+  function toggle() {
+    var y = window.scrollY;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (topBtn) topBtn.classList.toggle("visible", y > 400);
+    if (bottomBtn) bottomBtn.classList.toggle("visible", y > 400 && y < max - 100);
+  }
+  window.addEventListener("scroll", toggle, { passive: true });
+  if (topBtn) topBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  if (bottomBtn) bottomBtn.addEventListener("click", function () { window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" }); });
+  toggle();
+})();
+</script>
+{{BUSUANZI_SCRIPT}}
+
+<script>
+(function () {
+  document.querySelectorAll(".post-body pre").forEach(function (pre) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copy-btn";
+    btn.textContent = "复制";
+    btn.setAttribute("aria-label", "复制代码");
+    pre.appendChild(btn);
+    btn.addEventListener("click", function () {
+      var code = pre.querySelector("code");
+      var text = code ? code.innerText : pre.innerText;
+      function done() { btn.textContent = "已复制 ✓"; setTimeout(function () { btn.textContent = "复制"; }, 1500); }
+      function fallback() {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); done(); });
+      } else { fallback(); done(); }
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var sections = document.querySelectorAll(".post-feedback");
+  if (!sections.length) return;
+  var KVDB = "https://kvdb.io/";
+  function getCount(bucket, key) {
+    return fetch(KVDB + bucket + "/" + key)
+      .then(function (r) { return r.status === 200 ? r.text().then(function (t) { return parseInt(t, 10) || 0; }) : 0; })
+      .catch(function () { return null; });
+  }
+  function putCount(bucket, key, value) {
+    return fetch(KVDB + bucket + "/" + key, { method: "PUT", body: String(value) })
+      .then(function () { return true; })
+      .catch(function () { return false; });
+  }
+  sections.forEach(function (sec) {
+    var bucket = sec.getAttribute("data-bucket");
+    var slug = sec.getAttribute("data-post");
+    var counts = { helpful: null, unhelpful: null };
+    var statusEl = sec.querySelector(".feedback-status");
+    var lsKey = "fb:" + slug;
+    var voted = localStorage.getItem(lsKey);
+
+    function refreshUI() {
+      sec.querySelectorAll("[data-count]").forEach(function (el) {
+        var k = el.getAttribute("data-count");
+        if (counts[k] === null) { el.textContent = "–"; }
+        else { el.textContent = counts[k]; }
+      });
+      sec.querySelectorAll("[data-vote]").forEach(function (btn) {
+        var on = btn.getAttribute("data-vote") === voted;
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+        btn.classList.toggle("active", on);
+      });
+    }
+    function setStatus(msg) {
+      if (statusEl) { statusEl.textContent = msg; }
+    }
+
+    Promise.all([
+      getCount(bucket, slug + "-helpful").then(function (v) { counts.helpful = v; }),
+      getCount(bucket, slug + "-unhelpful").then(function (v) { counts.unhelpful = v; })
+    ]).then(refreshUI).catch(refreshUI);
+
+    sec.querySelectorAll("[data-vote]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var vote = btn.getAttribute("data-vote");
+        var other = vote === "helpful" ? "unhelpful" : "helpful";
+        if (voted === vote) { setStatus("你已经评价过这篇文章啦，感谢反馈！"); return; }
+        var wasVoted = voted;
+        if (counts[vote] === null) counts[vote] = 0;
+        if (counts[other] === null) counts[other] = 0;
+        counts[vote] += 1;
+        if (wasVoted) { counts[wasVoted] = Math.max(0, counts[wasVoted] - 1); }
+        voted = vote;
+        localStorage.setItem(lsKey, voted);
+        putCount(bucket, slug + "-helpful", counts.helpful);
+        putCount(bucket, slug + "-unhelpful", counts.unhelpful);
+        refreshUI();
+        setStatus(vote === "helpful" ? "感谢反馈！很高兴能帮到你 ☀️" : "收到反馈，我会继续改进 🙏");
+      });
+    });
+  });
+})();
+</script>
+<script>
+(function () {
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+})();
+</script>
+<script>
+(function () {
+  var dd = document.querySelector(".nav-dropdown");
+  if (!dd) return;
+  var btn = dd.querySelector(".nav-dropdown-toggle");
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    var open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", open ? "false" : "true");
+    dd.classList.toggle("open", !open);
+  });
+  document.addEventListener("click", function (e) {
+    if (!dd.contains(e.target)) {
+      btn.setAttribute("aria-expanded", "false");
+      dd.classList.remove("open");
+    }
+  });
+})();
+</script>
+</body>
+</html>
+
+
+
+
+

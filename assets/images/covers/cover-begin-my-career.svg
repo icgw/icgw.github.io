@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- 灰蓝天空渐变 -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2E3A4A"/>
+      <stop offset="45%" stop-color="#4A5A6E"/>
+      <stop offset="75%" stop-color="#7A8A9A"/>
+      <stop offset="100%" stop-color="#B8C4CE"/>
+    </linearGradient>
+
+    <!-- 雾气渐变 -->
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8D4DE" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#C8D4DE" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#DCE4EA" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- 地面渐变 -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E7A86"/>
+      <stop offset="55%" stop-color="#4A5560"/>
+      <stop offset="100%" stop-color="#2E363E"/>
+    </linearGradient>
+
+    <!-- 道路渐变 -->
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9AA6B0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#B8C4CE" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <!-- 柔光/雾化 -->
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="mistBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="figureBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- ===== 灰蓝天空 ===== -->
+  <rect x="0" y="0" width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- ===== 远处微光（模糊的太阳，被雾遮住） ===== -->
+  <circle cx="600" cy="300" r="180" fill="#DCE4EA" opacity="0.18" filter="url(#mistBlur)"/>
+  <circle cx="600" cy="300" r="90" fill="#E8EEF2" opacity="0.12" filter="url(#mistBlur)"/>
+
+  <!-- ===== 远山（模糊，消失在雾中） ===== -->
+  <path d="M0 360 L120 300 L240 340 L360 290 L480 345 L600 300 L720 350 L840 295 L960 345 L1080 300 L1200 340 L1200 420 L0 420 Z"
+        fill="#5A6A7A" opacity="0.45" filter="url(#softBlur)"/>
+
+  <!-- ===== 雾带（中景） ===== -->
+  <rect x="0" y="340" width="1200" height="140" fill="url(#mist)"/>
+
+  <!-- ===== 地面 ===== -->
+  <path d="M0 460 L200 430 L400 450 L600 435 L800 452 L1000 432 L1200 448 L1200 630 L0 630 Z"
+        fill="url(#ground)"/>
+
+  <!-- ===== 岔路（两条路分叉，通向雾中） ===== -->
+  <!-- 左路 -->
+  <path d="M600 630 C560 560, 480 520, 420 470 C380 438, 350 410, 330 380"
+        stroke="url(#road)" stroke-width="46" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <!-- 右路 -->
+  <path d="M600 630 C640 560, 720 520, 780 470 C820 438, 850 410, 870 380"
+        stroke="url(#road)" stroke-width="46" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <!-- 路的分叉点高光 -->
+  <ellipse cx="600" cy="600" rx="60" ry="18" fill="#B8C4CE" opacity="0.25" filter="url(#softBlur)"/>
+
+  <!-- ===== 站在岔路口的人影（背对，迷茫） ===== -->
+  <g filter="url(#figureBlur)" opacity="0.85">
+    <!-- 头部 -->
+    <circle cx="600" cy="430" r="14" fill="#2E363E"/>
+    <!-- 身体 -->
+    <path d="M600 445 C588 452, 584 480, 586 520 L614 520 C616 480, 612 452, 600 445 Z" fill="#2E363E"/>
+    <!-- 双腿（微微分开，站定） -->
+    <path d="M590 520 L584 590" stroke="#2E363E" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M610 520 L616 590" stroke="#2E363E" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <!-- 手臂（自然下垂，略显无力） -->
+    <path d="M588 455 L574 500" stroke="#2E363E" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M612 455 L626 500" stroke="#2E363E" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- 人影脚边的雾 -->
+  <ellipse cx="600" cy="595" rx="70" ry="16" fill="#C8D4DE" opacity="0.35" filter="url(#mistBlur)"/>
+
+  <!-- ===== 问号（迷茫符号，漂浮在人影上方） ===== -->
+  <g opacity="0.55" filter="url(#figureBlur)">
+    <text x="660" y="360" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold"
+          fill="#DCE4EA" text-anchor="middle">?</text>
+  </g>
+  <g opacity="0.3" filter="url(#softBlur)">
+    <text x="680" y="345" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold"
+          fill="#E8EEF2" text-anchor="middle">?</text>
+  </g>
+
+  <!-- ===== 漂浮的雾团（增加迷茫氛围） ===== -->
+  <g filter="url(#mistBlur)" opacity="0.5">
+    <ellipse cx="200" cy="400" rx="160" ry="50" fill="#C8D4DE"/>
+    <ellipse cx="950" cy="380" rx="180" ry="55" fill="#DCE4EA"/>
+    <ellipse cx="500" cy="340" rx="140" ry="40" fill="#C8D4DE"/>
+  </g>
+
+  <!-- ===== 前景雾（靠近观众，模糊） ===== -->
+  <g filter="url(#mistBlur)" opacity="0.4">
+    <ellipse cx="300" cy="600" rx="240" ry="60" fill="#DCE4EA"/>
+    <ellipse cx="900" cy="610" rx="260" ry="65" fill="#DCE4EA"/>
+  </g>
+
+  <!-- ===== 整体冷色氛围叠加 ===== -->
+  <rect x="0" y="0" width="1200" height="630" fill="#2E3A4A" opacity="0.08"/>
+</svg>

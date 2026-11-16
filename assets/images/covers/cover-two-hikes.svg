@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- 天空渐变：暖橙金 -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9A03F"/>
+      <stop offset="45%" stop-color="#F7B267"/>
+      <stop offset="75%" stop-color="#F4D35E"/>
+      <stop offset="100%" stop-color="#FCEBB6"/>
+    </linearGradient>
+
+    <!-- 太阳光晕 -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF6D5" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFD166" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F9A03F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 远山 -->
+    <linearGradient id="mountFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C97B4A"/>
+      <stop offset="100%" stop-color="#A85C32"/>
+    </linearGradient>
+
+    <!-- 中山 -->
+    <linearGradient id="mountMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8E4F2E"/>
+      <stop offset="100%" stop-color="#6B3A22"/>
+    </linearGradient>
+
+    <!-- 近山/地面 -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A3A22"/>
+      <stop offset="60%" stop-color="#3F2A18"/>
+      <stop offset="100%" stop-color="#2B1C10"/>
+    </linearGradient>
+
+    <!-- 雾气 -->
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FCEBB6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FCEBB6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FCEBB6" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 柔光 -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="cloudBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="smallBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- ===== 天空 ===== -->
+  <rect x="0" y="0" width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- ===== 太阳 ===== -->
+  <circle cx="820" cy="250" r="180" fill="url(#sunGlow)"/>
+  <circle cx="820" cy="250" r="70" fill="#FFF6D5" opacity="0.9" filter="url(#softGlow)"/>
+  <circle cx="820" cy="250" r="42" fill="#FFFDF2" opacity="0.95"/>
+
+  <!-- ===== 云层 ===== -->
+  <g filter="url(#cloudBlur)" opacity="0.55">
+    <ellipse cx="260" cy="130" rx="150" ry="32" fill="#FFE3B0"/>
+    <ellipse cx="380" cy="150" rx="110" ry="24" fill="#FFD89A"/>
+    <ellipse cx="960" cy="110" rx="160" ry="34" fill="#FFE9C4"/>
+    <ellipse cx="1080" cy="135" rx="120" ry="26" fill="#FFDCA8"/>
+    <ellipse cx="640" cy="90" rx="130" ry="24" fill="#FFF0D0"/>
+  </g>
+
+  <!-- ===== 远山 ===== -->
+  <path d="M0 420 L90 350 L180 390 L280 330 L380 395 L480 340 L580 400 L690 345 L800 405 L910 350 L1020 405 L1120 355 L1200 400 L1200 520 L0 520 Z"
+        fill="url(#mountFar)" opacity="0.85"/>
+
+  <!-- 雾带 -->
+  <rect x="0" y="395" width="1200" height="90" fill="url(#mist)"/>
+
+  <!-- ===== 中山 ===== -->
+  <path d="M0 490 L110 430 L230 475 L350 415 L470 478 L590 420 L710 480 L830 425 L950 482 L1070 430 L1200 478 L1200 560 L0 560 Z"
+        fill="url(#mountMid)" opacity="0.95"/>
+
+  <!-- ===== 近山/地面 ===== -->
+  <path d="M0 545 L120 500 L260 535 L400 492 L540 538 L680 498 L820 540 L960 500 L1100 540 L1200 505 L1200 630 L0 630 Z"
+        fill="url(#ground)"/>
+
+  <!-- ===== 山径（蜿蜒小路） ===== -->
+  <path d="M120 630 C220 585, 300 600, 380 560 C460 520, 520 545, 590 515 C650 490, 700 500, 735 478"
+        stroke="#C8A27A" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M120 630 C220 585, 300 600, 380 560 C460 520, 520 545, 590 515 C650 490, 700 500, 735 478"
+        stroke="#E0C39A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- ===== 登山者（山顶附近，剪影） ===== -->
+  <!-- 登山者身体 -->
+  <g fill="#2B1C10">
+    <!-- 头部 -->
+    <circle cx="760" cy="418" r="7"/>
+    <!-- 身体 -->
+    <path d="M760 425 L758 452 L752 478 L758 478 L762 455 L766 478 L772 478 L766 452 Z"/>
+    <!-- 手臂（登山杖） -->
+    <path d="M760 432 L742 448" stroke="#2B1C10" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M760 432 L776 445" stroke="#2B1C10" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- 登山杖 -->
+    <path d="M742 448 L736 485" stroke="#8D6E63" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- 背包 -->
+    <rect x="764" y="428" width="10" height="16" rx="3" fill="#6B3A22"/>
+  </g>
+
+  <!-- 登山者暖色轮廓光 -->
+  <circle cx="760" cy="418" r="7" fill="none" stroke="#FFD166" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- ===== 飞鸟 ===== -->
+  <g stroke="#3F2A18" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M520 170 C528 162, 536 162, 544 170"/>
+    <path d="M544 170 C552 162, 560 162, 568 170"/>
+    <path d="M600 140 C606 134, 612 134, 618 140"/>
+    <path d="M618 140 C624 134, 630 134, 636 140"/>
+  </g>
+
+  <!-- ===== 前景暖色光斑 ===== -->
+  <g filter="url(#smallBlur)" opacity="0.35">
+    <circle cx="220" cy="560" r="30" fill="#FFD166"/>
+    <circle cx="620" cy="545" r="26" fill="#FCEBB6"/>
+    <circle cx="980" cy="560" r="34" fill="#FFD89A"/>
+  </g>
+
+  <!-- ===== 整体暖色氛围 ===== -->
+  <rect x="0" y="0" width="1200" height="630" fill="#FF8C00" opacity="0.06"/>
+</svg>

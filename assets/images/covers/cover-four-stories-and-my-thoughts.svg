@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Night sky gradient -->
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#05050a"/>
+      <stop offset="45%" stop-color="#0b0d1a"/>
+      <stop offset="70%" stop-color="#1a1c2e"/>
+      <stop offset="85%" stop-color="#2d2a3a"/>
+      <stop offset="100%" stop-color="#1a1015"/>
+    </linearGradient>
+
+    <!-- Horizon glow gradient -->
+    <linearGradient id="horizonGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a3a" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#5a3a3a" stop-opacity="0.3"/>
+      <stop offset="55%" stop-color="#c86040" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#f0a060" stop-opacity="0.9"/>
+      <stop offset="85%" stop-color="#fce8c0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#3a1a10" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Lower land gradient -->
+    <linearGradient id="landGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0508"/>
+      <stop offset="20%" stop-color="#0d0608"/>
+      <stop offset="100%" stop-color="#020102"/>
+    </linearGradient>
+
+    <!-- Wing silhouette gradient -->
+    <linearGradient id="wingGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060608"/>
+      <stop offset="100%" stop-color="#0a0a0e"/>
+    </linearGradient>
+
+    <!-- Cloud layer gradient -->
+    <linearGradient id="cloudGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1510" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1a0805" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Blur filter for soft glow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="heavyBlur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <!-- Stars pattern -->
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background: Night sky -->
+  <rect width="1200" height="630" fill="#010102"/>
+
+  <!-- Upper sky with subtle gradient -->
+  <rect x="0" y="0" width="1200" height="400" fill="url(#skyGradient)"/>
+
+  <!-- Horizon glow band -->
+  <rect x="0" y="300" width="1200" height="130" fill="url(#horizonGlow)" filter="url(#softGlow)"/>
+
+  <!-- Bright horizon line segments (cloud breaks) -->
+  <g opacity="0.8">
+    <!-- Left bright segment -->
+    <path d="M 0 370 Q 100 365 250 368 Q 350 370 480 372 L 480 390 Q 350 385 250 382 Q 100 380 0 385 Z" fill="#e8c090" filter="url(#heavyBlur)" opacity="0.5"/>
+    
+    <!-- Central bright strip -->
+    <path d="M 400 355 Q 550 352 680 358 Q 720 360 780 362 L 780 378 Q 720 375 680 372 Q 550 368 400 372 Z" fill="#f5d8b0" opacity="0.6" filter="url(#heavyBlur)"/>
+    
+    <!-- Right bright segment -->
+    <path d="M 700 345 Q 850 340 1000 350 L 1000 370 Q 850 360 700 365 Z" fill="#fce8d0" opacity="0.7" filter="url(#heavyBlur)"/>
+  </g>
+
+  <!-- Dark cloud bank above horizon -->
+  <path d="M 0 350 Q 120 342 280 348 Q 400 352 520 345 Q 680 338 820 348 Q 980 355 1200 350 L 1200 375 Q 980 380 820 375 Q 680 365 520 372 Q 400 378 280 375 Q 120 372 0 378 Z" fill="#0a0506" opacity="0.85"/>
+
+  <!-- Distant land/city silhouette below horizon -->
+  <path d="M 0 390 Q 200 382 400 385 Q 600 388 800 384 Q 1000 380 1200 386 L 1200 420 Q 1000 415 800 418 Q 600 422 400 418 Q 200 415 0 420 Z" fill="#100a08" opacity="0.9"/>
+
+  <!-- Wing silhouette - upper large wing shape -->
+  <g filter="url(#softGlow)" opacity="0.95">
+    <!-- Main wing body -->
+    <path d="M -50 230 L 400 260 Q 600 270 850 280 L 1250 295 L 1250 320 L 800 305 Q 550 295 350 285 L -50 270 Z" fill="#040406"/>
+    
+    <!-- Wing secondary extension / flap -->
+    <path d="M 600 280 L 780 295 L 1050 310 L 1250 325 L 1250 340 L 1000 330 L 750 315 L 580 300 Z" fill="#060608" opacity="0.9"/>
+    
+    <!-- Wingtip details and gaps -->
+    <path d="M 900 300 L 1200 315 L 1200 325 L 900 310 Z" fill="#020204"/>
+  </g>
+
+  <!-- Additional dark wing shape upper left -->
+  <path d="M -20 180 Q 150 200 350 215 L 600 230 L 600 250 L 300 235 Q 100 220 -20 210 Z" fill="#030305" opacity="0.8"/>
+
+  <!-- Window reflection highlights on the wing edge -->
+  <g opacity="0.7">
+    <!-- Small bright dots representing window reflections / lights -->
+    <circle cx="780" cy="295" r="2" fill="#c8d8ff" opacity="0.8"/>
+    <circle cx="820" cy="298" r="1.8" fill="#b0c8ff" opacity="0.7"/>
+    <circle cx="860" cy="300" r="2.2" fill="#d0e0ff" opacity="0.9"/>
+    <circle cx="895" cy="303" r="1.5" fill="#a0b8ff" opacity="0.6"/>
+    <circle cx="930" cy="306" r="2" fill="#c8d8ff" opacity="0.8"/>
+    <circle cx="970" cy="308" r="1.8" fill="#b8d0ff" opacity="0.7"/>
+    <circle cx="1010" cy="312" r="2.5" fill="#e0e8ff" opacity="0.85"/>
+    <circle cx="1050" cy="315" r="1.6" fill="#c0d0ff" opacity="0.6"/>
+    <circle cx="1090" cy="318" r="2" fill="#d0e0ff" opacity="0.75"/>
+    <circle cx="1130" cy="320" r="1.8" fill="#b8c8ff" opacity="0.65"/>
+  </g>
+
+  <!-- Sparse stars in upper sky -->
+  <g opacity="0.6">
+    <circle cx="200" cy="80" r="1" fill="#ffffff" opacity="0.5"/>
+    <circle cx="350" cy="60" r="0.8" fill="#ffffff" opacity="0.4"/>
+    <circle cx="500" cy="45" r="1.2" fill="#ffffff" opacity="0.6"/>
+    <circle cx="650" cy="70" r="0.9" fill="#ffffff" opacity="0.35"/>
+    <circle cx="800" cy="55" r="1" fill="#ffffff" opacity="0.45"/>
+    <circle cx="950" cy="85" r="0.7" fill="#ffffff" opacity="0.3"/>
+    <circle cx="1100" cy="50" r="1.1" fill="#ffffff" opacity="0.5"/>
+    <circle cx="150" cy="130" r="0.8" fill="#ffffff" opacity="0.35"/>
+    <circle cx="280" cy="150" r="0.6" fill="#ffffff" opacity="0.25"/>
+    <circle cx="420" cy="120" r="0.9" fill="#ffffff" opacity="0.4"/>
+    <circle cx="580" cy="140" r="0.7" fill="#ffffff" opacity="0.3"/>
+    <circle cx="720" cy="110" r="0.8" fill="#ffffff" opacity="0.35"/>
+    <circle cx="880" cy="130" r="0.6" fill="#ffffff" opacity="0.25"/>
+    <circle cx="1020" cy="100" r="0.9" fill="#ffffff" opacity="0.4"/>
+  </g>
+
+  <!-- Faint cloud texture in the glow area -->
+  <path d="M 150 370 Q 250 362 380 368 Q 450 372 520 365 L 520 378 Q 450 382 380 378 Q 250 374 150 380 Z" fill="#c08050" opacity="0.15" filter="url(#heavyBlur)"/>
+  <path d="M 600 365 Q 700 358 820 362 Q 920 366 1050 360 L 1050 372 Q 920 378 820 374 Q 700 370 600 375 Z" fill="#d09060" opacity="0.12" filter="url(#heavyBlur)"/>
+
+  <!-- Subtle lower darkness (bottom of image) -->
+  <rect x="0" y="420" width="1200" height="210" fill="url(#landGradient)"/>
+
+  <!-- Very subtle watermark-like text area (mimicking the faint text in the image) -->
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" opacity="0.03" text-anchor="middle" letter-spacing="3">© 2024</text>
+
+</svg>
