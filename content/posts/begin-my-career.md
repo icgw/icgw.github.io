@@ -6,7 +6,7 @@ tags: [思考]
 cover: /assets/images/covers/cover-begin-my-career.svg
 summary: 学习兴趣与工作经历的一些体会。
 ---
-
+[TOC]
 # 职业初心
 自从学习程序设计开始，我被各种惊艳的算法和花里胡哨的编码技巧折服了，从此爱上了编码，自然地走上了程序员的职业道路。
 

@@ -6,7 +6,7 @@ tags: [Thinking]
 cover: /assets/images/covers/cover-four-stories-and-my-thoughts.svg
 summary: 四个故事和我的感想（英文版）
 ---
-
+[TOC]
 # Stroy 0：Different Cognition #
 I served a professor from United Kingdom, and I took him around Beijing and talked a lot with him along the way. When he saw similar placards hung on the street, and saw some large characters carved on the Mountain near the Mutianyu Great Wall, then he would ask me what it meant. He also told me that he saw nine dragons on the wall in the Forbidden City and told me: "We think the dragon on the wall represent evil, but Chinese people think it as lucky and good." We walked many places together, and when he stopped to rest, he said: "It's amazing!"
 
