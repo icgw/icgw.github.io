@@ -1,0 +1,284 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2c3a"/>
+      <stop offset="100%" stop-color="#1a1a24"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffeaa7"/>
+      <stop offset="100%" stop-color="#fdcb6e"/>
+    </radialGradient>
+    <radialGradient id="windowGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffeaa7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#fdcb6e" stop-opacity="0.3"/>
+    </radialGradient>
+    <linearGradient id="mouseBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a0a0b0"/>
+      <stop offset="100%" stop-color="#787888"/>
+    </linearGradient>
+    <linearGradient id="slipper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="slipperSole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4a574"/>
+      <stop offset="100%" stop-color="#b8956a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 天空 -->
+  <rect width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- 星星 -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="100" cy="60" r="2"/>
+    <circle cx="250" cy="90" r="1.5"/>
+    <circle cx="400" cy="40" r="2"/>
+    <circle cx="550" cy="70" r="1.5"/>
+    <circle cx="700" cy="50" r="2"/>
+    <circle cx="850" cy="80" r="1.5"/>
+    <circle cx="1000" cy="45" r="2"/>
+    <circle cx="1100" cy="100" r="1.5"/>
+    <circle cx="150" cy="130" r="1"/>
+    <circle cx="350" cy="120" r="1"/>
+    <circle cx="600" cy="110" r="1.5"/>
+    <circle cx="900" cy="130" r="1"/>
+    <circle cx="1050" cy="70" r="1.5"/>
+  </g>
+
+  <!-- 月亮 -->
+  <circle cx="1050" cy="110" r="50" fill="url(#moon)" filter="url(#glow)"/>
+  <circle cx="1065" cy="100" r="45" fill="url(#sky)"/>
+
+  <!-- 城市建筑背景 -->
+  <g>
+    <!-- 远处建筑 -->
+    <rect x="50" y="200" width="80" height="250" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="150" y="150" width="60" height="300" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="230" y="180" width="90" height="270" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="340" y="220" width="70" height="230" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="430" y="160" width="100" height="290" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="550" y="190" width="80" height="260" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="650" y="140" width="110" height="310" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="780" y="200" width="75" height="250" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="870" y="170" width="90" height="280" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="980" y="230" width="85" height="220" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="1080" y="180" width="70" height="270" fill="#1a1a2e" opacity="0.7"/>
+
+    <!-- 近处建筑 -->
+    <rect x="0" y="280" width="120" height="200" fill="#12121e"/>
+    <rect x="130" y="250" width="100" height="230" fill="#12121e"/>
+    <rect x="250" y="300" width="130" height="180" fill="#12121e"/>
+    <rect x="400" y="260" width="110" height="220" fill="#12121e"/>
+    <rect x="530" y="290" width="140" height="190" fill="#12121e"/>
+    <rect x="690" y="240" width="120" height="240" fill="#12121e"/>
+    <rect x="830" y="310" width="100" height="170" fill="#12121e"/>
+    <rect x="950" y="270" width="130" height="210" fill="#12121e"/>
+    <rect x="1100" y="300" width="100" height="180" fill="#12121e"/>
+
+    <!-- 建筑窗户 -->
+    <g fill="url(#windowGlow)" opacity="0.7">
+      <rect x="20" y="300" width="12" height="15"/>
+      <rect x="50" y="300" width="12" height="15"/>
+      <rect x="80" y="330" width="12" height="15"/>
+      <rect x="20" y="350" width="12" height="15"/>
+      <rect x="150" y="270" width="12" height="15"/>
+      <rect x="180" y="270" width="12" height="15"/>
+      <rect x="150" y="310" width="12" height="15"/>
+      <rect x="210" y="300" width="12" height="15"/>
+      <rect x="270" y="320" width="12" height="15"/>
+      <rect x="310" y="320" width="12" height="15"/>
+      <rect x="350" y="350" width="12" height="15"/>
+      <rect x="420" y="280" width="12" height="15"/>
+      <rect x="450" y="280" width="12" height="15"/>
+      <rect x="480" y="310" width="12" height="15"/>
+      <rect x="420" y="340" width="12" height="15"/>
+      <rect x="550" y="310" width="12" height="15"/>
+      <rect x="590" y="310" width="12" height="15"/>
+      <rect x="630" y="340" width="12" height="15"/>
+      <rect x="710" y="260" width="12" height="15"/>
+      <rect x="750" y="260" width="12" height="15"/>
+      <rect x="710" y="300" width="12" height="15"/>
+      <rect x="770" y="330" width="12" height="15"/>
+      <rect x="850" y="330" width="12" height="15"/>
+      <rect x="890" y="330" width="12" height="15"/>
+      <rect x="970" y="290" width="12" height="15"/>
+      <rect x="1010" y="290" width="12" height="15"/>
+      <rect x="1050" y="320" width="12" height="15"/>
+      <rect x="970" y="350" width="12" height="15"/>
+      <rect x="1120" y="320" width="12" height="15"/>
+      <rect x="1150" y="320" width="12" height="15"/>
+    </g>
+  </g>
+
+  <!-- 地面 -->
+  <rect x="0" y="480" width="1200" height="150" fill="url(#ground)"/>
+
+  <!-- 人行道纹理 -->
+  <g stroke="#3a3a4a" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- 拖鞋 1（左边，稍微翻转） -->
+  <g transform="translate(180, 440) rotate(-10)">
+    <!-- 鞋底 -->
+    <ellipse cx="70" cy="50" rx="75" ry="22" fill="url(#slipperSole)"/>
+    <!-- 鞋面 -->
+    <path d="M 15,45 Q 10,20 40,15 L 100,15 Q 130,20 125,45 Q 125,60 70,58 Q 15,60 15,45 Z" fill="url(#slipper)"/>
+    <!-- 鞋带 -->
+    <path d="M 30,25 Q 70,10 110,25" stroke="#a93226" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- 绒毛装饰 -->
+    <g fill="#fff" opacity="0.8">
+      <circle cx="40" cy="18" r="5"/>
+      <circle cx="55" cy="14" r="5"/>
+      <circle cx="70" cy="12" r="5"/>
+      <circle cx="85" cy="14" r="5"/>
+      <circle cx="100" cy="18" r="5"/>
+    </g>
+    <!-- 高光 -->
+    <ellipse cx="50" cy="35" rx="20" ry="8" fill="#fff" opacity="0.15"/>
+  </g>
+
+  <!-- 拖鞋 2（右边，稍微倾斜） -->
+  <g transform="translate(320, 445) rotate(8)">
+    <!-- 鞋底 -->
+    <ellipse cx="70" cy="50" rx="75" ry="22" fill="url(#slipperSole)"/>
+    <!-- 鞋面 -->
+    <path d="M 15,45 Q 10,20 40,15 L 100,15 Q 130,20 125,45 Q 125,60 70,58 Q 15,60 15,45 Z" fill="url(#slipper)"/>
+    <!-- 鞋带 -->
+    <path d="M 30,25 Q 70,10 110,25" stroke="#a93226" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- 绒毛装饰 -->
+    <g fill="#fff" opacity="0.8">
+      <circle cx="40" cy="18" r="5"/>
+      <circle cx="55" cy="14" r="5"/>
+      <circle cx="70" cy="12" r="5"/>
+      <circle cx="85" cy="14" r="5"/>
+      <circle cx="100" cy="18" r="5"/>
+    </g>
+    <ellipse cx="50" cy="35" rx="20" ry="8" fill="#fff" opacity="0.15"/>
+  </g>
+
+  <!-- 老鼠 -->
+  <g transform="translate(560, 390)">
+    <!-- 尾巴 -->
+    <path d="M -40,80 Q -100,100 -130,60 Q -150,30 -120,15" stroke="#8888a0" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+    <!-- 身体 -->
+    <ellipse cx="0" cy="60" rx="55" ry="40" fill="url(#mouseBody)"/>
+
+    <!-- 肚子 -->
+    <ellipse cx="0" cy="70" rx="35" ry="25" fill="#c0c0d0"/>
+
+    <!-- 后腿 -->
+    <ellipse cx="-25" cy="95" rx="15" ry="10" fill="#8888a0" transform="rotate(-15, -25, 95)"/>
+    <ellipse cx="20" cy="95" rx="15" ry="10" fill="#8888a0" transform="rotate(10, 20, 95)"/>
+
+    <!-- 前爪 -->
+    <ellipse cx="-30" cy="80" rx="10" ry="7" fill="#a0a0b0" transform="rotate(-20, -30, 80)"/>
+    <ellipse cx="-45" cy="75" rx="8" ry="6" fill="#a0a0b0" transform="rotate(-30, -45, 75)"/>
+
+    <!-- 头部 -->
+    <ellipse cx="-50" cy="25" rx="38" ry="32" fill="url(#mouseBody)"/>
+
+    <!-- 脸部亮色区域 -->
+    <ellipse cx="-55" cy="30" rx="25" ry="22" fill="#b0b0c0"/>
+
+    <!-- 左耳 -->
+    <ellipse cx="-30" cy="-5" rx="22" ry="28" fill="#a0a0b0" transform="rotate(-20, -30, -5)"/>
+    <ellipse cx="-30" cy="-2" rx="15" ry="20" fill="#e8a0a0" transform="rotate(-20, -30, -2)"/>
+
+    <!-- 右耳 -->
+    <ellipse cx="-72" cy="-8" rx="20" ry="26" fill="#9090a0" transform="rotate(15, -72, -8)"/>
+    <ellipse cx="-72" cy="-5" rx="13" ry="18" fill="#e8a0a0" transform="rotate(15, -72, -5)"/>
+
+    <!-- 眼睛 -->
+    <ellipse cx="-62" cy="18" rx="7" ry="8" fill="#1a1a2e"/>
+    <ellipse cx="-60" cy="16" rx="3" ry="3.5" fill="#fff" opacity="0.9"/>
+    <ellipse cx="-42" cy="15" rx="6" ry="7" fill="#1a1a2e"/>
+    <ellipse cx="-40" cy="13" rx="2.5" ry="3" fill="#fff" opacity="0.9"/>
+
+    <!-- 鼻子 -->
+    <ellipse cx="-78" cy="30" rx="6" ry="5" fill="#e8a0a0"/>
+
+    <!-- 胡须 -->
+    <g stroke="#ccc" stroke-width="1.5" opacity="0.7">
+      <line x1="-82" y1="28" x2="-120" y2="20"/>
+      <line x1="-82" y1="32" x2="-122" y2="32"/>
+      <line x1="-82" y1="36" x2="-118" y2="44"/>
+      <line x1="-78" y1="26" x2="-105" y2="12"/>
+      <line x1="-78" y1="34" x2="-108" y2="50"/>
+    </g>
+
+    <!-- 嘴 -->
+    <path d="M -80,36 Q -75,40 -70,36" stroke="#888" stroke-width="1.5" fill="none"/>
+
+    <!-- 拿拖鞋的爪子 -->
+    <g>
+      <!-- 手臂 -->
+      <path d="M -20,55 Q -50,45 -70,55" stroke="#a0a0b0" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-72" cy="55" rx="8" ry="6" fill="#b0b0c0"/>
+    </g>
+  </g>
+
+  <!-- 老鼠旁边的奶酪 -->
+  <g transform="translate(680, 475)">
+    <path d="M 0,20 L 30,0 L 50,20 L 50,30 L 0,30 Z" fill="#f1c40f"/>
+    <path d="M 0,20 L 30,0 L 30,30 L 0,30 Z" fill="#e6b800"/>
+    <circle cx="10" cy="15" r="3" fill="#d4a800"/>
+    <circle cx="25" cy="10" r="2" fill="#d4a800"/>
+    <circle cx="35" cy="18" r="2.5" fill="#d4a800"/>
+  </g>
+
+  <!-- 下水道盖板 -->
+  <g transform="translate(500, 530)">
+    <ellipse cx="0" cy="0" rx="35" ry="12" fill="#3a3a4a" stroke="#4a4a5a" stroke-width="2"/>
+    <line x1="-20" y1="-3" x2="20" y2="-3" stroke="#4a4a5a" stroke-width="1.5"/>
+    <line x1="-22" y1="2" x2="22" y2="2" stroke="#4a4a5a" stroke-width="1.5"/>
+    <line x1="-18" y1="7" x2="18" y2="7" stroke="#4a4a5a" stroke-width="1.5"/>
+  </g>
+
+  <!-- 地面小石子/细节 -->
+  <g fill="#4a4a5a" opacity="0.6">
+    <circle cx="100" cy="510" r="2"/>
+    <circle cx="300" cy="540" r="1.5"/>
+    <circle cx="450" cy="510" r="2"/>
+    <circle cx="750" cy="550" r="1.5"/>
+    <circle cx="900" cy="520" r="2"/>
+    <circle cx="1000" cy="560" r="1.5"/>
+    <circle cx="1100" cy="530" r="2"/>
+  </g>
+
+  <!-- 路灯 -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="8" height="280" fill="#3a3a4a" rx="2"/>
+    <rect x="-15" y="-10" width="40" height="15" fill="#4a4a5a" rx="3"/>
+    <circle cx="4" cy="0" r="12" fill="#fdcb6e" opacity="0.3"/>
+    <circle cx="4" cy="-5" r="6" fill="#ffeaa7" opacity="0.6"/>
+  </g>
+
+  <!-- 另一个路灯 -->
+  <g transform="translate(920, 220)">
+    <rect x="0" y="0" width="8" height="260" fill="#3a3a4a" rx="2"/>
+    <rect x="-15" y="-10" width="40" height="15" fill="#4a4a5a" rx="3"/>
+    <circle cx="4" cy="0" r="12" fill="#fdcb6e" opacity="0.3"/>
+    <circle cx="4" cy="-5" r="6" fill="#ffeaa7" opacity="0.6"/>
+  </g>
+
+  <!-- 底部氛围光晕 -->
+  <ellipse cx="600" cy="630" rx="500" ry="60" fill="#fdcb6e" opacity="0.05"/>
+</svg>
