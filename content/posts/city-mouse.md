@@ -3,6 +3,7 @@ title: 城市之鼠
 date: 2026-11-21
 category: 小说
 tags: [寓言]
+cover: /assets/images/covers/cover-city-mouse.svg
 summary: 偶然间，我看了《伊索寓言》关于田鼠与家鼠的故事。我就想试着写从乡下到城市的老鼠，它的生活会怎样变化。于是，就有了这篇小说。
 ---
 
