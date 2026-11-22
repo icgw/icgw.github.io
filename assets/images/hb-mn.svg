@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- 1. 背景主色：柔和的暖米色 -->
+    <rect id="bg-rect" width="1920" height="1080" fill="#FDF5E6"/>
+    
+    <!-- 2. 中间区域的柔和光晕：稍微加深一点的暖黄色，聚焦视线 -->
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE8C4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FDE8C4" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- 基础暖米色底 -->
+  <use href="#bg-rect" />
+
+  <!-- 中间柔和的暖色光晕 -->
+  <rect width="1920" height="1080" fill="url(#center-glow)" />
+
+  <!-- 散落的几何图形 (波点与圆环) -->
+  <g opacity="0.8">
+    <!-- 右侧 -->
+    <circle cx="1600" cy="200" r="30" fill="#E28743" /> <!-- 焦糖色 -->
+    <circle cx="1750" cy="350" r="15" fill="#FFFFFF" /> <!-- 纯白 -->
+    <circle cx="1450" cy="500" r="20" fill="#E28743" />
+    <circle cx="1800" cy="700" r="25" fill="#D98A5B" /> <!-- 略浅的橘棕色 -->
+    <circle cx="1550" cy="850" r="10" fill="#FFFFFF" />
+    <circle cx="1700" cy="950" r="15" fill="#E28743" />
+    <circle cx="1400" cy="150" r="35" fill="none" stroke="#E28743" stroke-width="8"/>
+    <circle cx="1350" cy="800" r="12" fill="#FFFFFF" />
+    
+    <!-- 左侧 -->
+    <circle cx="300" cy="250" r="25" fill="#E28743" />
+    <circle cx="200" cy="450" r="20" fill="#FFFFFF" />
+    <circle cx="400" cy="600" r="30" fill="none" stroke="#D98A5B" stroke-width="8"/>
+    <circle cx="250" cy="750" r="15" fill="#E28743" />
+    <circle cx="450" cy="900" r="25" fill="#FFFFFF" />
+    <circle cx="150" cy="950" r="18" fill="#E28743" />
+    <circle cx="500" cy="300" r="10" fill="#D98A5B" />
+    <circle cx="550" cy="750" r="12" fill="#FFFFFF" />
+
+    <!-- 顶部与底部零星点缀 -->
+    <circle cx="800" cy="100" r="15" fill="#D98A5B" opacity="0.6" />
+    <circle cx="1100" cy="150" r="20" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8"/>
+    <circle cx="900" cy="950" r="25" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="1150" cy="900" r="15" fill="#E28743" opacity="0.6" />
+  </g>
+
+  <!-- 正中间的 Emoji 风格橙子 (居中在 960, 540) -->
+  <g transform="translate(960, 540)">
+    
+    <!-- 底部底座阴影 (稍微加深了颜色以适应暖色底) -->
+    <ellipse cx="0" cy="155" rx="90" ry="20" fill="#D2B48C" opacity="0.6" />
+
+    <!-- 橙子主体 (纯色扁平 + 深灰粗描边，让轮廓更清晰) -->
+    <circle cx="0" cy="0" r="140" fill="#FF8C00" stroke="#333333" stroke-width="6" />
+
+    <!-- 橙皮表面的点状纹理 -->
+    <g fill="#E65100" opacity="0.6">
+      <circle cx="-50" cy="-60" r="5" />
+      <circle cx="40" cy="-80" r="4" />
+      <circle cx="80" cy="-30" r="6" />
+      <circle cx="-80" cy="20" r="5" />
+      <circle cx="70" cy="50" r="4" />
+      <circle cx="-30" cy="80" r="6" />
+      <circle cx="30" cy="100" r="5" />
+      <circle cx="-100" cy="-20" r="4" />
+      <circle cx="110" cy="-10" r="5" />
+      <circle cx="0" cy="-40" r="4" />
+      <circle cx="-10" cy="30" r="5" />
+    </g>
+    
+    <!-- 左上角的高光 -->
+    <path d="M -80 -70 A 100 100 0 0 1 -20 -110 A 100 100 0 0 0 -90 -30 Z" fill="#FFB74D" opacity="0.8" />
+
+    <!-- 顶部的果蒂 -->
+    <circle cx="0" cy="-140" r="8" fill="#5D4037" stroke="#333333" stroke-width="3" />
+
+    <!-- 叶子 -->
+    <path d="M 0 -140 Q 30 -200 80 -170 Q 60 -120 0 -140 Z" fill="#8BC34A" stroke="#333333" stroke-width="5" stroke-linejoin="round"/>
+    
+    <!-- 叶脉 -->
+    <path d="M 5 -140 Q 35 -160 60 -160" fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
+    
+  </g>
+</svg>
